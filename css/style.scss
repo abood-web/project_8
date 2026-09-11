@@ -1,0 +1,2389 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+// var تعريف المتغيرات
+$tran : all 0.4s ease-in-out;
+// --- المتغيرات (عشان تعدل الألوان براحتك) ---
+$primary-color: #ffc001;
+$active-bg: $primary-color;
+$active-text: #ffffff;
+$btn-bg: #fff;
+$transition-speed: 0.4s;
+// Variables
+$text-color: #212529; // قريب من ألوان Bootstrap الأساسية
+$box-bg: #ffffff;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$btn-hover: rgba(0, 0, 0, 0.8);
+
+
+// puplic anhcor tag
+.a {
+  padding: 18px 33px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 192, 1);
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: $tran;
+
+  &:hover {
+    color: #fff;
+    background-color: rgba(255, 192, 1, 0.849);
+    border-radius: 30px;
+    border-color: rgba(255, 192, 1, 0.849);
+  }
+
+  &:active {
+    color: rgb(255, 192, 1);
+    background-color: transparent;
+  }
+
+  i,
+  svg {
+    padding-right: 10px;
+  }
+}
+
+// start Header_section
+header {
+  background: url(../images/BG_HEDER.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .icon_bar {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .iconp1 {
+      ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: start;
+        gap: 20px;
+        align-items: center;
+
+        li {
+          &:nth-child(1):hover {
+            a {
+              color: rgb(230, 0, 35);
+            }
+          }
+
+          &:nth-child(2):hover {
+            a {
+              color: rgb(24, 119, 242);
+            }
+          }
+
+          &:nth-child(3):hover {
+            a {
+              color: rgb(244, 111, 48);
+            }
+          }
+
+          &:nth-child(4):hover {
+            a {
+              color: black;
+            }
+          }
+
+          &:nth-child(5):hover {
+            a {
+              color: rgb(251, 188, 5);
+            }
+          }
+
+        }
+
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          transition: $tran;
+          color: #fff;
+        }
+      }
+    }
+
+    .iconp2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      .iconp2_p1 {
+        a {
+          font-size: 14px;
+          text-decoration: none;
+          transition: $tran;
+          color: #fff;
+
+          &:hover {
+            color: rgb(52, 168, 83);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .iconp2_p2 {
+        a {
+          font-size: 14px;
+          text-decoration: none;
+          transition: $tran;
+          color: #fff;
+
+          &:hover {
+            color: rgb(255, 191, 0);
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          color: rgb(255, 192, 1);
+        }
+      }
+    }
+  }
+
+  nav {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Nlogo {
+      img {
+        object-fit: cover !important;
+        width: 186px;
+        height: 59px;
+      }
+    }
+
+    .UlNan {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+
+      li {
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: #fff;
+          transition: $tran;
+
+          &:hover {
+            color: rgb(255, 192, 1);
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 1px;
+            background-color: rgb(255, 192, 1);
+            ;
+            transition: $tran;
+
+          }
+        }
+      }
+
+    }
+  }
+
+  .content_H {
+    padding-top: 310px;
+    padding-bottom: 290px;
+
+    .a1 {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(255, 192, 1);
+      transition: $tran;
+    }
+
+    h3 {
+      padding: 45px 0px 45px 0px;
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
+      transition: $tran;
+    }
+
+    p {
+      padding: 0px 100px 55px 0px;
+      font-size: 17px;
+      font-weight: 300;
+      color: #fff;
+      transition: $tran;
+    }
+
+    .a2 {
+      @extend .a;
+
+      &:active {
+        color: rgb(255, 192, 1);
+        background-color: transparent;
+      }
+
+      i,
+      svg {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  @media (min-width:320px) and (max-width :767px) {
+    nav {
+      padding: 20px 0px;
+      flex-direction: column;
+      gap: 30px;
+
+      .UlNan {
+        padding: 0;
+        gap: 30px;
+      }
+    }
+
+    .icon_bar {
+      padding: 15px 0px;
+      display: flex;
+      flex-direction: column;
+
+      .iconp2 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+
+
+      }
+    }
+
+    .content_H {
+      padding-top: 210px;
+      padding-bottom: 200px;
+
+    }
+  }
+}
+
+// End Header_section
+// start applay_section
+
+.applay_section {
+  background-color: #fafafa;
+
+  .custom-carousel {
+    max-width: 1201px;
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    z-index: 1000000;
+    top: -61px;
+    left: 100px;
+
+    // تنسيق حاوية الروابط (فوق وتحت)
+    .carousel-controls {
+      display: flex;
+      justify-content: start;
+      gap: 1px;
+
+      .nav-btn {
+        padding: 19px 27px;
+        margin-bottom: 3px;
+        text-decoration: none;
+        border: 1px solid $primary-color;
+        background: $btn-bg;
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        transition: $tran;
+
+        &:hover {
+          background: rgba($primary-color, 0.1);
+        }
+
+        // تنسيق الزر النشط
+        &.active {
+          background: $active-bg;
+          color: $active-text;
+        }
+
+        &:nth-child(1) {
+          padding-left: 60px;
+        }
+
+        &:nth-child(1)::before {
+          content: "";
+          display: inline;
+          padding: 61px 8px 0px 15px;
+          background-color: $primary-color;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 200025;
+
+        }
+
+        @media (min-width:320px) and (max-width:767px) {
+          &:nth-child(1)::before {
+            display: none;
+          }
+
+          &:nth-child(1) {
+            padding-left: 30px;
+          }
+        }
+
+      }
+
+
+    }
+
+    @media (min-width:320px) and (max-width:767px) {
+      .carousel-controls {
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+
+
+    // تنسيق حاوية المحتوى
+    .carousel-content-wrapper {
+      position: relative;
+      background: #fafafa;
+      border: 1px solid #fafafa;
+      padding: 30px;
+      overflow: hidden;
+
+
+      .content-slide {
+        display: none; // إخفاء كل الديفات افتراضياً
+
+        form {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          gap: 15px;
+
+          .p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 10px;
+
+            label {
+              margin: 0;
+              font-size: 14px;
+
+            }
+
+            input {
+              padding: 8px 35px;
+              border: 1px solid;
+              border-color: transparent;
+
+              &::placeholder {
+                font-size: 14px;
+                color: #ebe8e8;
+              }
+            }
+
+          }
+
+          button {
+            border: 1px solid;
+            border-color: transparent;
+            background-color: $primary-color;
+            color: $active-text;
+            font-size: 14px;
+            padding: 14px 15px 14px 14px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: $tran;
+
+            &:hover {
+              background-color: #fafafa;
+              color: $primary-color;
+              border: 1px solid $primary-color;
+            }
+          }
+
+
+        }
+
+        @media (min-width:320px) and (max-width:767px) {
+          form {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        @media (min-width:768px) and (max-width:1300px) {
+          form {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        }
+
+        // الديف النشط يظهر ويتطبق عليه الأنيميشن
+        &.active {
+          display: block;
+          animation: fadeSlideUp $transition-speed ease forwards;
+        }
+
+      }
+
+      &::before {
+        content: "";
+        display: inline;
+        padding: 216px 8px 0px 15px;
+        background-color: $primary-color;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 200025;
+
+      }
+
+      @media (min-width:320px) and (max-width:767px) {
+        &::before {
+          display: none;
+
+        }
+      }
+    }
+  }
+
+  @media (min-width:320px) and (max-width:767px) {
+    .custom-carousel {
+      position: static !important;
+    }
+  }
+
+  @media (min-width:768px) and (max-width:1300px) {
+    .custom-carousel {
+      position: static !important;
+    }
+  }
+
+  // --- كود الحركة (Animation) ---
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); // يبدأ من تحت شوية
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0); // يثبت في مكانه الطبيعي
+    }
+  }
+
+}
+
+
+// End applay_section
+// start views_section
+
+.views_section {
+  .views_heading {
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: $primary-color;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+
+  .main-carousel {
+
+    margin: 2rem auto;
+    text-align: center;
+
+    // تنسيق حاوية الروابط (فوق وتحت)
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+
+      .nav-btna {
+        padding: 5px;
+        border: 1px solid $primary-color;
+        background: $btn-bg;
+        color: $primary-color;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba($primary-color, 0.1);
+        }
+
+        // تنسيق الزر النشط
+        &.activea {
+          background: $active-bg;
+          color: $active-text;
+        }
+      }
+    }
+
+    // تنسيق حاوية المحتوى
+    .carousel-content-wrapper {
+      position: relative;
+
+      .content-slidea {
+        display: none;
+
+        .all {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+
+        // إخفاء كل الديفات افتراضياً
+
+        .img {
+          padding-top: 282px;
+          background-size: cover !important;
+          background-attachment: fixed;
+          text-decoration: none;
+          color: #706e6e;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          width: 370px;
+          height: 370px;
+          display: flex;
+          transition: $tran;
+
+
+          &:nth-child(2):hover {
+            svg {
+              left: 48.5%;
+            }
+          }
+
+          &:nth-child(3):hover {
+            svg {
+              left: 82%;
+            }
+          }
+
+          &:hover {
+            padding-top: 270px;
+          }
+
+          &:hover .cont {
+            background-color: #ffc001bb;
+            line-height: normal;
+            padding-top: 0px;
+
+            span {
+              display: block;
+              padding-top: 25px;
+            }
+
+            p {
+              padding: 20px 0px;
+            }
+
+            span,
+            p {
+              margin: auto !important;
+            }
+
+            svg {
+              opacity: 1;
+              top: 95%;
+              border: 1px solid #ffc001d3;
+              padding: 10px;
+              border-radius: 50%;
+              background-color: #ffc001d3;
+              box-shadow: $shadow;
+              color: #fff;
+
+            }
+          }
+
+
+          .cont {
+            flex: 1;
+            line-height: 5;
+            width: 100%;
+            background-color: #dad8d5a6;
+            transition: $tran;
+
+            span {
+              font-size: 16px;
+              font-weight: 700;
+              transition: $tran;
+              display: none;
+            }
+
+            p {
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              font-weight: bold;
+              transition: $tran;
+            }
+
+            svg {
+              color: #fff;
+              font-size: 14px;
+              position: absolute;
+              top: 120%;
+              left: 15%;
+              z-index: 999999;
+              transition: $tran;
+              opacity: 0;
+
+            }
+
+            @media (min-width:320px) and (max-width:1200px) {
+              svg {
+                display: none;
+              }
+            }
+
+          }
+        }
+
+        // الديف النشط يظهر ويتطبق عليه الأنيميشن
+        &.activea {
+          display: block;
+          animation: fadeSlideUp $transition-speed ease forwards;
+        }
+      }
+    }
+  }
+
+  // --- كود الحركة (Animation) ---
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); // يبدأ من تحت شوية
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0); // يثبت في مكانه الطبيعي
+    }
+  }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+  .views_section {
+    .carousel-content-wrapper {
+      .content-slidea {
+        .all {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+  .views_section {
+    .carousel-content-wrapper {
+      .content-slidea {
+        .all {
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .img {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// End views_section
+// start pup_place
+
+.pup_place {
+  margin-top: 35px;
+
+  .Hpup_place {
+    h6 {
+      font-size: 30px;
+    }
+
+    span {
+      display: inline-block;
+      padding: 35px 360px;
+      font-size: 16px;
+    }
+
+    &::before {
+      content: "POPULAR PLACE";
+      display: block;
+      font-size: 120px;
+      color: #a5a4a438;
+      position: relative;
+      top: 100px;
+      left: 0;
+      z-index: -99;
+    }
+
+  }
+
+  .carousel {
+    .carousel-indicators {
+      li {
+        width: 6px !important;
+        height: 6px !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        border-radius: 50px !important;
+        padding: 5px !important;
+        background-color: #ffc001;
+        background-clip: padding-box !important;
+      }
+    }
+
+    .carousel-control-prev-icon {
+      background-image: none;
+
+      &:nth-child(1) {
+        font-size: 55px !important;
+        color: $primary-color !important;
+      }
+    }
+
+    .carousel-control-next-icon {
+      background-image: none;
+
+      &:nth-child(1) {
+        font-size: 55px !important;
+        color: $primary-color !important;
+      }
+    }
+  }
+}
+
+@media (min-width:320px) and (max-width:999px) {
+  .pup_place {
+    .Hpup_place {
+      span {
+        display: inline-block;
+        padding: 35px 0px;
+        font-size: 16px;
+      }
+
+      &::before {
+        font-size: 50px;
+        top: 50px;
+      }
+    }
+
+    .carousel {
+      .carousel-indicators {
+        li {
+          width: 3px !important;
+          height: 3px !important;
+          border-radius: 50px !important;
+          padding: 3px !important;
+
+        }
+      }
+    }
+  }
+}
+
+// End pup_place
+// start Honeymoon_section
+.Honeymoon_section {
+  .HHoneymoon_section {
+    margin-bottom: 50px;
+
+    h6 {
+      font-size: 30px;
+
+    }
+
+    span {
+      font-size: 16px;
+    }
+
+  }
+
+  .CHoneymoon_section {
+    .theard-custom-carousel {
+      text-align: center;
+
+      // تنسيق حاوية الروابط (فوق وتحت)
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+
+        .nav-btnb {
+          padding: 7px;
+          border: 1px solid $primary-color;
+          background: $btn-bg;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: rgba($primary-color, 0.1);
+          }
+
+          // تنسيق الزر النشط
+          &.activeb {
+            background: $primary-color;
+
+          }
+        }
+      }
+
+      // تنسيق حاوية المحتوى
+      .carousel-content-wrapper {
+        position: relative;
+        overflow: hidden;
+
+        .content-slideb {
+          display: none; // إخفاء كل الديفات افتراضياً
+
+          .infinite-carousel {
+            width: 100%;
+            overflow: hidden;
+
+            .carousel-track {
+              position: relative; // مهم جداً لدقة حساب المسافات في الجافاسكريبت
+              display: flex;
+              gap: 15px;
+              overflow-x: auto;
+              cursor: grab;
+              user-select: none;
+
+              /* إخفاء شريط التمرير */
+              &::-webkit-scrollbar {
+                display: none;
+              }
+
+              scrollbar-width: none;
+
+              &:active {
+                cursor: grabbing;
+              }
+            }
+
+            .product-item {
+              flex: 0 0 730px;
+              /* عرض ثابت للمنتج مهم لنجاح الحسابات */
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: transform 0.3s ease;
+
+              .CHoneymoon_secp {
+                flex: 1;
+                padding: 30px 0px 0px 0px;
+                display: flex;
+                align-items: start;
+                justify-content: start;
+
+                .CHoneymoon_secp1 {
+                  .p1 {
+                    width: 372px;
+                    height: 309px;
+                    background-repeat: no-repeat;
+                    background-size: cover !important;
+                    background-position: center;
+                    display: flex;
+                    justify-content: end;
+                    align-items: end;
+
+                    ul {
+                      list-style: none;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: end;
+                      gap: 3px;
+                      margin: 0;
+
+
+                      li {
+
+                        &:nth-child(1),
+                        &:nth-child(3) {
+                          a {
+                            &:active {
+                              color: #2c2b2b;
+                            }
+                          }
+                        }
+
+                        &:nth-child(2) {
+                          a {
+                            &:active {
+                              color: rgb(255, 0, 128);
+                            }
+                          }
+                        }
+
+                        a {
+                          color: #fff;
+                          padding: 6px 15px 3px 15px;
+                          background-color: #2c2b2b;
+                          font-size: 13px;
+                          transition: $tran;
+
+                          &:hover {
+                            background-color: $primary-color;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .CHoneymoon_secp2 {
+                  text-align: left;
+
+                  .CHoneymoon_secp2_p1 {
+                    text-align: left;
+                    padding: 20px;
+
+                    h6 {
+                      font-size: 20px;
+                      color: #333333;
+                      margin: 0;
+                    }
+
+                    span {
+                      font-size: 20px;
+                      font-weight: 600;
+                      color: $primary-color;
+                    }
+
+                    .custom-star-rating {
+                      display: inline-flex;
+                      gap: 4px; 
+                      padding: 0px 0px 63px 0px;
+
+                      .star-link {
+                        text-decoration: none;
+                        font-size: 25px;
+                        color: #FFD700;
+
+                        /* إلغاء البادينج والباك جراوند والبوردر بناءً على طلبك */
+                        padding: 0;
+                        background: transparent;
+                        border: none;
+                        outline: none;
+
+                        transition: transform 0.2s ease;
+
+                        &:hover {
+                          transform: scale(1.1);
+                        }
+
+                        &:active {
+                          transform: scale(0.9);
+                        }
+
+                        i {
+                          color: #FFD700; // توحيد اللون الأصفر للأيقونة نفسها
+                        }
+                      }
+                    }
+
+                  }
+
+                  a {
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 15px 70px 12px 60px;
+                    background-color: $primary-color;
+                    border: 1px solid transparent;
+                    transition: $tran;
+
+                    &:hover {
+                      background-color: #fff;
+                      color: $primary-color;
+                      border-color: #ffc001;
+
+                    }
+                  }
+                }
+
+              }
+
+              &:hover {
+                transform: translateY(-5px);
+              }
+            }
+          }
+
+          // الديف النشط يظهر ويتطبق عليه الأنيميشن
+          &.activeb {
+            display: block;
+            animation: fadeSlideUp $transition-speed ease forwards;
+          }
+        }
+      }
+    }
+
+    // --- كود الحركة (Animation) ---
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px); // يبدأ من تحت شوية
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0); // يثبت في مكانه الطبيعي
+      }
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .CHoneymoon_section .theard-custom-carousel .carousel-content-wrapper .content-slideb .infinite-carousel .carousel-track {
+    .product-item {
+      flex: 0 0 600px;
+
+      .CHoneymoon_secp {
+        .CHoneymoon_secp1 .p1 {
+          width: 280px;
+          height: 250px;
+        }
+
+        .CHoneymoon_secp2 a {
+          padding: 12px 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .HHoneymoon_section {
+    padding: 0 15px;
+    margin-bottom: 30px;
+
+    h6 {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .CHoneymoon_section .theard-custom-carousel .carousel-content-wrapper .content-slideb .infinite-carousel .carousel-track {
+    .product-item {
+      flex: 0 0 90vw;
+
+      .CHoneymoon_secp {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+
+        .CHoneymoon_secp1 {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          .p1 {
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+          }
+        }
+
+        .CHoneymoon_secp2 {
+          text-align: center;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .CHoneymoon_secp2_p1 {
+            text-align: center;
+            padding: 20px 0;
+          }
+
+          a {
+            padding: 12px 0;
+            width: 80%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .CHoneymoon_section .theard-custom-carousel .carousel-content-wrapper .content-slideb .infinite-carousel .carousel-track {
+    .product-item {
+      flex: 0 0 95vw;
+
+      .CHoneymoon_secp .CHoneymoon_secp1 .p1 {
+        height: 200px;
+      }
+
+      .CHoneymoon_secp .CHoneymoon_secp2 a {
+        width: 95%;
+      }
+    }
+  }
+}
+
+// End Honeymoon_section
+// start Packages_sec
+.Packages_sec {
+  padding: 262px 0px 156px 0px;
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 55px;
+
+    .Packages_sCOntent {
+      .line1 {
+        .p1 {
+          font-size: 40px;
+          font-weight: bolder;
+
+          sup {
+            font-size: 20px;
+          }
+        }
+
+        .p2 {
+          font-size: 14px;
+          font-weight: 500;
+          color: $primary-color;
+        }
+      }
+
+      h1 {
+        font-size: 38px;
+        padding: 31px 0px 47px 0px;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 50px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fafafa;
+        text-transform: uppercase;
+        background-color: $primary-color;
+        padding: 15px 30px;
+        border: 1px solid $primary-color;
+        border-radius: 4px;
+        transition: $tran;
+
+        &:hover {
+          background-color: #fafafa;
+          color: $primary-color;
+          box-shadow: 0 8px 20px $primary-color;
+        }
+      }
+    }
+
+    .Packages_carosel {
+      width: 500px;
+      height: 300px;
+
+      .carousel-inner {
+        .carousel-item {
+          img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+
+      .carousel-control-prev {
+        svg {
+          font-size: 20px !important;
+          color: $primary-color;
+          padding: 7px;
+          background-color: #2c2b2bc2;
+        }
+      }
+
+      .carousel-control-next {
+        svg {
+          font-size: 20px !important;
+          color: $primary-color;
+          padding: 7px;
+          background-color: #2c2b2bc2;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 100px 0; // تقليل المسافات العلوية والسفلية الضخمة لتناسب الشاشات الأصغر
+
+    .container {
+      flex-direction: column; // جعل الكاروسيل يظهر فوق المحتوى النصي
+      text-align: center; // توسيط النصوص لتناسب الشكل العمودي
+      gap: 40px;
+
+      .Packages_sCOntent {
+        h1 {
+          font-size: 32px; // تصغير حجم العنوان قليلاً
+          padding: 20px 0px 30px 0px;
+        }
+      }
+
+      // إلغاء العرض الثابت للكاروسيل ليصبح مرناً
+      .Packages_carosel {
+        width: 100%;
+        max-width: 500px; // لا يتخطى العرض الأصلي
+        height: auto;
+
+        .carousel-inner {
+          .carousel-item {
+            img {
+              width: 100%; // الصورة تأخذ عرض الحاوية بالكامل
+              height: 300px; // الحفاظ على الارتفاع المطلوب
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // شاشات الموبايل الصغيرة
+  @media (max-width: 767px) {
+    padding: 60px 0;
+
+    .container {
+      gap: 30px;
+
+      .Packages_sCOntent {
+        .line1 {
+          .p1 {
+            font-size: 32px; // تصغير النسبة المئوية
+          }
+        }
+
+        h1 {
+          font-size: 26px;
+        }
+
+        p {
+          margin-bottom: 30px;
+        }
+      }
+
+      .Packages_carosel {
+        .carousel-inner {
+          .carousel-item {
+            img {
+              height: 250px; // تقليل الارتفاع نسبياً لتوفير مساحة في الشاشة
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // شاشات الموبايل الصغيرة جداً
+  @media (max-width: 480px) {
+    padding: 50px 0;
+
+    .container {
+      .Packages_carosel {
+        .carousel-inner {
+          .carousel-item {
+            img {
+              height: 200px; // تصغير الارتفاع أكثر للشاشات الصغيرة جداً
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// End Packages_sec
+// start stock_sec
+
+.stock_sec {
+  background-color: #f9f9f9;
+  padding: 127px 0px 214px 0px;
+  margin-bottom: 150px;
+  position: relative;
+
+  .container {
+    text-align: center;
+
+    h2 {
+      font-size: 30px;
+      padding-bottom: 42px;
+      margin: 0;
+    }
+
+    p {
+      padding: 0px 150px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      p {
+        padding: 0px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      padding: 0px 80px;
+    }
+
+    .a_S {
+      @extend .a;
+      display: inline-block;
+      margin: 30px 0;
+      border: 1px solid $primary-color !important;
+      padding: 15px 72px;
+    }
+
+    .statices_div {
+      .clock-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+
+        .time-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-width: 80px;
+
+          &:nth-child(1) {
+
+            span,
+            p {
+              color: $primary-color;
+              font-weight: 700;
+            }
+          }
+
+          &:nth-child(2) {
+
+            span,
+            p {
+              color: #ef6f6c;
+              font-weight: 700;
+            }
+          }
+
+          &:nth-child(3) {
+
+            span,
+            p {
+              color: #28c190;
+              font-weight: 700;
+            }
+          }
+
+          &:nth-child(4) {
+
+            span,
+            p {
+              color: #333333;
+              font-weight: 700;
+            }
+          }
+
+          span {
+            font-size: 36px;
+          }
+
+          p {
+            margin: 15x 0px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .clock-container {
+          flex-wrap: wrap;
+
+          .time-box {
+            padding: 10px 15px;
+
+            span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .stock_carosel {
+    position: absolute;
+    left: 100px;
+    z-index: 999;
+
+    .custom-slider-box {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto !important;
+
+      .custom-slider-view {
+        overflow: hidden;
+      }
+
+      .custom-slider-strip {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .custom-slider-item {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        // &-1 { background-color: #3498db; }
+        // &-2 { background-color: #e74c3c; }
+        // &-3 { background-color: #2ecc71; }
+        // &-4 { background-color: #e7d812; }
+
+        .custom-slider-txt {
+          background-color: #fff;
+          font-size: 24px;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.4s ease-out;
+          transition-delay: 0.2s;
+
+          .stock_secp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 45px;
+
+            .p1 {
+              width: 372px;
+              height: 309px;
+              background-repeat: no-repeat;
+              background-size: cover !important;
+              background-position: center;
+
+            }
+
+            .content_stock {
+              h1 {
+                font-size: 24px;
+              }
+
+              p {
+                font-size: 16px;
+
+                svg {
+                  font-weight: 800;
+                  padding: 0px 10px 0px 0px;
+                  color: $primary-color;
+                }
+              }
+
+              span {
+                color: $primary-color;
+                font-size: 40px;
+
+              }
+            }
+
+            .a_St {
+              display: inline;
+              background-color: $primary-color;
+              border: 1px solid transparent;
+              padding: 10px 56px;
+              ;
+              color: #fff;
+              text-decoration: none;
+              transform: rotate(270deg);
+              transition: all 0.8s ease;
+
+              &:hover {
+                transform: rotate(90deg);
+                color: $primary-color;
+                background-color: transparent;
+                border-color: $primary-color;
+              }
+
+              &:active {
+                transform: rotate(0deg);
+              }
+            }
+          }
+        }
+
+        &.custom-slider-active {
+          .custom-slider-txt {
+            color: #000;
+            opacity: 1;
+            transform: translateY(0);
+
+          }
+        }
+      }
+
+      .custom-slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        color: rgba(255, 255, 255, 0.527);
+        background-color: rgba(255, 192, 1, 0.527);
+
+        padding: 15px;
+        cursor: pointer;
+        z-index: 5;
+        transition: $tran;
+
+        &:hover {
+          color: #fff;
+          background-color: $primary-color;
+        }
+
+        &.custom-slider-prev {
+          border-radius: 52% 48% 100% 0% / 100% 49% 51% 0%;
+          transform: rotate(42deg);
+          left: 10px;
+
+          svg {
+            transform: rotate(-36deg) !important;
+            position: absolute;
+            z-index: 11;
+            top: 7px;
+            left: 9px;
+          }
+        }
+
+        &.custom-slider-next {
+          border-radius: 52% 48% 100% 0% / 100% 49% 51% 0%;
+          transform: rotate(46deg);
+          right: 10px;
+
+          svg {
+            transform: rotate(-36deg) !important;
+            position: absolute;
+            z-index: 11;
+            top: 7px;
+            left: 9px;
+          }
+        }
+
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .stock_carosel {
+      position: relative !important; // تحويله لـ relative عشان ينزل تحت العداد طبيعي وميغطيش عناصر تانية
+      left: auto !important; // إلغاء التزحيف الجانبي
+      margin: 40px auto 0 auto;
+      width: 100%;
+
+      .custom-slider-box {
+        .stock_secp {
+          flex-direction: column !important; // كرت السلايدر يترتب رأسي (فوق بعض) بدلاً من أفقي
+          text-align: center;
+          gap: 25px;
+          padding: 30px 20px;
+
+          .p1 {
+            width: 100% !important; // الصورة تأخذ العرض بالكامل
+            height: 250px;
+          }
+
+          .content_stock {
+            width: 100%;
+          }
+
+          .a_St {
+            display: block !important;
+            transform: rotate(0deg) !important; // إلغاء الـ 270 درجة دوران عشان الزرار يتعدل ويظهر بالكامل
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            padding: 12px 0;
+            text-align: center;
+
+            &:hover {
+              transform: rotate(0deg) translateY(-4px) !important; // بديل حركة اللف القديمة
+            }
+
+            &:active {
+              transform: rotate(0deg) translateY(0) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0px 80px 0px; // تقليل Paddings السكشن الضخمة
+    margin-bottom: 50px;
+
+    .container {
+      padding: 0px 15px !important; // تنظيف البادنج عشان الكروت تفرش صح بدون خنق
+
+      h2 {
+        font-size: 24px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .stock_carosel {
+      .custom-slider-box {
+        padding: 0 45px; // مسافة أمان يمين وشمال عشان الأسهم متداريش على الكلام
+
+        .custom-slider-nav {
+          &.custom-slider-prev {
+            left: -5px;
+          }
+
+          &.custom-slider-next {
+            right: -5px;
+          }
+        }
+
+        .stock_secp {
+          .p1 {
+            height: 180px; // تصغير إرتفاع الصورة ليناسب شاشة الموبايل الصغير
+          }
+
+          .content_stock {
+            h1 {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+
+            span {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+// End stock_sec
+// start deal_section
+
+.deal_section {
+  margin-bottom: 300px;
+
+  .container {
+    padding: 0;
+
+    .imbackG {
+      margin: 0 auto;
+      padding: 80px 344px 364px 344px;
+      background-size: cover !important;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+
+      .colorbackG {
+        background-color: rgba(255, 192, 1, 0.76) !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+          text-align: center;
+
+          h1 {
+            font-size: 30px;
+            color: #fff;
+          }
+
+          span {
+            display: inline-block;
+            letter-spacing: 8px;
+            font-size: 16px;
+            color: #fff;
+            padding: 40px 0px 30px 0px;
+          }
+
+          form {
+            padding-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            input {
+              flex: 3;
+              padding: 20px 31px;
+              border: none;
+              color: #1b2739;
+              transition: $tran;
+
+              &::placeholder {
+                color: #cecfd1;
+                font-size: 16px;
+                transition: $tran;
+              }
+            }
+
+            button {
+              text-transform: uppercase;
+              padding: 22px;
+              font-size: 14px;
+              color: #fff;
+              background-color: #1b2739;
+              border: 1px solid transparent;
+              transition: all 1s ease;
+
+              &:hover {
+                transform: rotate(180deg);
+
+              }
+
+              &:active {
+                transform: rotate(360deg);
+                background-color: transparent;
+                color: #1b2739;
+                border-color: #1b2739;
+
+              }
+            }
+          }
+
+          .watch_sec {
+            width: 632px;
+            height: 332px;
+            position: absolute;
+            top: 75%;
+            left: 24%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            a {
+              position: absolute;
+              left: 25px;
+              bottom: 5px;
+              font-size: 25px;
+              color: #fff;
+              text-decoration: none;
+              transition: $tran;
+
+              &:hover {
+                color: $primary-color;
+              }
+
+              &:hover span {
+                color: $primary-color;
+              }
+
+              &:hover svg {
+                color: $primary-color;
+              }
+
+              &:active svg {
+                color: $primary-color;
+                transform: rotate(360deg);
+              }
+
+              i,
+              svg {
+                transition: $tran;
+              }
+
+              span {
+                display: inline-block;
+                font-size: 16px;
+                letter-spacing: 0;
+                padding-left: 25px !important;
+                transition: all 1s linear;
+              }
+            }
+
+          }
+
+          @media (max-width :767px) {
+            .watch_sec {
+              position: static;
+              width: 100%;
+            }
+          }
+        }
+
+      }
+    }
+
+    // 📱 ضيف البلوك ده جوه قفلة الـ deal_section مباشرة من تحت
+    @media (max-width: 767px) {
+      .imbackG {
+        padding: 0px !important; // شيلنا الـ padding الضخم وخليناه مسافة بسيطة فوق وتحت
+        height: auto !important;
+
+        .colorbackG {
+          position: relative !important; // تحويله لـ relative عشان يخلي الخلفية تتمدد مع المحتوى
+          height: auto !important;
+          width: 100% !important;
+          display: block !important; // إلغاء الـ flex عشان العناصر تترتب تحت بعض طبيعي
+          padding: 20px !important; // مسافة أمان داخلية للمحتوى من الجوانب
+
+          .content {
+            width: 100% !important;
+
+            h1 {
+              font-size: 26px !important;
+            }
+
+            span {
+              font-size: 14px !important;
+              letter-spacing: 2px !important;
+              padding: 20px 0 !important;
+            }
+
+            form {
+              flex-direction: column !important; // الـ input والـ button تحت بعض
+              gap: 15px !important;
+              padding-bottom: 30px !important;
+
+              input {
+                width: 100% !important;
+                flex: none !important; // إلغاء تأثير الـ flex القديم
+              }
+
+              button {
+                width: 100% !important;
+              }
+            }
+
+            .watch_sec {
+              position: static !important; // فكرتك الصح عشان ينزل تحت الفورم
+              width: 100% !important;
+              height: auto !important;
+              aspect-ratio: 16 / 9 !important; // بيحافظ على أبعاد الفيديو من غير ما يتمط
+              margin-top: 20px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// End deal_section
+// start blog_sec
+
+.blog_sec {
+  .container {
+    .blog_allS {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 29px;
+
+      .blog_son {
+        flex: 1;
+        box-shadow: $shadow;
+        transition: $tran;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        img {
+          width: 100%;
+          height: 261px;
+          object-fit: cover !important;
+        }
+
+        .content {
+          padding: 30px;
+
+          .history {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+              color: #cecfd1;
+              font-weight: 400;
+              text-transform: uppercase;
+              font-size: 14px;
+            }
+          }
+
+          h6 {
+            font-size: 20px;
+            color: #333333;
+          }
+
+          p {
+            font-size: 15px;
+            color: #8b8b8b;
+          }
+
+          ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 25px;
+
+            li {
+              &:nth-child(1) {
+                a {
+                  color: $primary-color;
+                  border-radius: 0px 15px 30px 15px;
+
+                  &:hover {
+                    background-color: rgba(255, 192, 1, 0.301);
+                  }
+
+                  &:active {
+                    color: #f9f7f7;
+                    background-color: $primary-color;
+                  }
+
+                }
+              }
+
+              &:nth-child(2) {
+                a {
+                  color: #4fcba3;
+                  border-radius: 0px 0px 30px 30px;
+
+                  &:hover {
+                    background-color: rgba(79, 203, 164, 0.301);
+                  }
+
+                  &:active {
+                    color: #f9f7f7;
+                    background-color: #4fcba3;
+                  }
+                }
+              }
+
+              &:nth-child(3) {
+                a {
+                  color: #1b2739;
+                  border-radius: 15px 0px 15px 30px;
+
+                  &:hover {
+                    background-color: rgba(27, 39, 57, 0.301);
+                  }
+
+                  &:active {
+                    color: #f9f7f7;
+                    background-color: #1b2739;
+                  }
+                }
+              }
+
+
+              a {
+                text-decoration: none;
+                padding: 8px 10px;
+                background-color: #f9f7f7;
+                transition: $tran;
+
+                &:hover {
+                  padding: 15px;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .container {
+      .blog_allS {
+        flex-direction: column; // بيخلي الـ 3 كروت يترتبوا تحت بعض
+        gap: 25px; // تقليل المسافة بين الكروت بشكل بسيط ليناسب الموبايل
+
+        .blog_son {
+          width: 100%; // يضمن إن كل كارت مالي عرض الشاشة بالكامل
+
+          img {
+            height: auto;
+            aspect-ratio: 16 / 9; // بيحافظ على أبعاد الصورة نسبة وتناسب لما الكارت يوسع
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1100px) {
+    .container {
+      .blog_allS {
+        flex-wrap: wrap;
+        gap: 25px;
+
+        .blog_son {
+          width: 100%;
+
+          img {
+            height: auto;
+            aspect-ratio: 16 / 9;
+          }
+        }
+      }
+    }
+  }
+}
+
+// End blog_sec
+
+// Start footer
+footer {
+  background-image: url(../images/w.png);
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 120px 80px 30px 120px;
+  margin-top: 120px;
+
+  .container {
+    .all_footer {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      padding: 0px 0px 130px 0px;
+      border-bottom: 1px solid #515a68;
+
+      .footer_son {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: stretch;
+        gap: 30px;
+
+        &:nth-child(1) {
+          a {
+            text-decoration: none;
+            display: inline-block;
+
+            img {
+              object-fit: cover;
+              width: 170px;
+              height: 61px;
+            }
+          }
+
+          span {
+            font-size: 16px;
+            color: #bababa;
+
+            a {
+              color: #bababa;
+              text-decoration: none;
+              transition: $tran;
+
+              &:hover {
+                color: $primary-color;
+
+              }
+            }
+          }
+
+          .iconF1 {
+            padding-top: 30px;
+
+            ul {
+              list-style-type: none;
+              display: flex;
+              justify-content: start;
+              gap: 20px;
+              align-items: center;
+
+              li {
+                &:nth-child(1):hover {
+                  a {
+                    color: rgb(230, 0, 35);
+                  }
+                }
+
+                &:nth-child(2):hover {
+                  a {
+                    color: rgb(24, 119, 242);
+                  }
+                }
+
+                &:nth-child(3):hover {
+                  a {
+                    color: rgb(244, 111, 48);
+                  }
+                }
+
+                &:nth-child(4):hover {
+                  a {
+                    color: black;
+                  }
+                }
+
+                &:nth-child(5):hover {
+                  a {
+                    color: rgb(251, 188, 5);
+                  }
+                }
+
+              }
+
+              a {
+                text-decoration: none;
+                font-size: 14px;
+                transition: $tran;
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 31px;
+
+            li {
+              &:nth-child(1) {
+                a {
+                  text-transform: uppercase;
+                  font-size: 20px;
+                  font-weight: 500;
+
+                  &:hover {
+                    color: $primary-color;
+
+                    &::after {
+                      width: 100%;
+                    }
+                  }
+
+                  &::after {
+                    content: '';
+                    display: block;
+                    width: 20%;
+                    height: 3px;
+                    background-color: $primary-color;
+                    transition: $tran;
+                  }
+                }
+              }
+
+              a {
+                text-decoration: none;
+                color: #bababa;
+                font-size: 14px;
+                transition: $tran;
+
+                &:hover {
+                  color: $primary-color;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .contFoot {
+      padding: 30px 0px 0px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .p1 {
+        a {
+          text-decoration: none;
+          display: inline-block;
+          color: #515a68;
+          font-size: 14px;
+          transition: $tran;
+
+          &:nth-child(1) {
+            padding-right: 20px;
+          }
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+
+      .p2 {
+        ul {
+          list-style-type: none;
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          align-items: center;
+
+          li {
+            a {
+              text-decoration: none;
+              color: #515a68;
+              font-size: 14px;
+              transition: $tran;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 30px 20px;
+    margin-top: 60px;
+
+    .container {
+      .all_footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 40px;
+        gap: 40px;
+
+        .footer_son {
+          align-items: center;
+
+          .iconF1 ul {
+            justify-content: center;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            ul {
+              gap: 20px;
+              flex-direction: row;
+              flex-wrap: wrap;
+
+              li {
+                &:nth-child(1) {
+                  a {
+                    &::after {
+                      margin: 5px auto 0 auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .contFoot {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding-top: 20px;
+
+        .p1 {
+          a:nth-child(1) {
+            padding-right: 0;
+            display: block;
+            margin-bottom: 5px;
+          }
+        }
+
+        .p2 {
+          ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// End footer
